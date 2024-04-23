@@ -12,13 +12,6 @@ import java.util.Optional;
 import java.util.Scanner;
 import java.util.function.Function;
 
-/**
- * This class ....
- * <p>
- * The translator of a <b>S</b><b>M</b>al<b>L</b> program.
- *
- * @author naji
- */
 public final class Translator {
 
     private final String fileName; // source file of SML code
@@ -91,29 +84,6 @@ public final class Translator {
         } catch (IllegalAccessException | InstantiationException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
-        // TODO: add code for all other types of instructions
-        // DONE
-
-        // TODO: Then, replace the switch by using the Reflection API
-        // DONE
-
-        // TODO: Next, use dependency injection to allow this machine class
-        //       to work with different sets of opcodes (different CPUs)
-        // DONE
-
-        /**
-         * To allow the machine to use different set of opcode,
-         * you can change the instruction package in resources/beans.properties file to the new package
-         * which contain the new instructions. Instructinos classes should follow the same naming pattern.
-         */
-
-        /**
-         * For DI, it might be a good option if I have the chance to move getDestination, and getSource
-         * to other class (the factory), I would have had more flixability to play around and cover DI better and cover
-         * Dependancy Inversion as well.
-         * If I hade more fliexability, I would have moved more code from this function(class) to another clas, maybe the builder
-         * or other helper classes.
-         */
 
         return null;
     }

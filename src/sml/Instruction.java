@@ -1,22 +1,5 @@
 package sml;
 
-// TODO: write a JavaDoc for the class
-// DONE
-
-/**
- * Represents an abstract instruction in a Simple Machine Language (SML).
- * Instructions are the basic building blocks of programs that can be executed
- * by a virtual machine.
- * <p>
- * An instruction consists of a label (which is optional and can be null) and
- * an opcode (operation code) that must be a valid operation in the language.
- * Subclasses of this abstract class provide specific implementations for
- * different types of instructions.
- * </p>
- *
- * @author Maji Naser
- * @see Machine
- */
 public abstract class Instruction {
     /**
      * The optional label associated with the instruction.
@@ -84,25 +67,11 @@ public abstract class Instruction {
         return (getLabel() == null) ? "" : getLabel() + ": ";
     }
 
-    // TODO: What exactly is the meaning of abstract in the declaration below?
-    //       Note that the method is declared in the superclass.
-    //       (Write a short explanation.)
-    // DONE
-
     /**
-     * it means that the method does not have an implementation in the abstract class itself.
-     * Instead, the responsibility of providing an actual implementation is delegated to
-     * the concrete subclasses that extend the abstract class.
-     * In other words, any subclasses extending Instruction are required to override the abstract toString method,
-     * providing their specific logic for converting an instance of the subclass to a string representation.
-     *
      * @return a string representation of the instruction
      */
     @Override
     public abstract String toString();
-
-    // TODO: Make sure that subclasses also implement equals and hashCode (needed in class Machine).
-    // DONE
 
     /**
      * Checks if this instruction is equal to another object.

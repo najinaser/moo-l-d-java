@@ -3,18 +3,6 @@ package sml;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Represents the machine, the context in which programs run.
- * <p>
- * An instance contains
- *    - registers,
- *    - flags,
- *    - memory,
- *    - program counter,
- *    - labels,
- *    - program.
- *
- */
 public final class Machine {
 
     private final Labels labels = new Labels();
@@ -89,13 +77,9 @@ public final class Machine {
                 .collect(Collectors.joining("\n"));
     }
 
-    // TODO: use pattern matching for instanceof
-    // DONE
     // https://docs.oracle.com/en/java/javase/14/language/pattern-matching-instanceof-operator.html
     @Override
     public boolean equals(Object o) {
-        // TODO: add missing fields
-        // DONE
         return o instanceof Machine other &&
                 Objects.equals(this.labels, other.labels) &&
                 Objects.equals(this.program, other.program) &&

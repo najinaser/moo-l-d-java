@@ -57,8 +57,6 @@ public class OperandMemoryWithBase implements InstructionSource, InstructionDest
         return "[" + base + " + " + offset + "]";
     }
 
-    //TODO: implement methods .equals and .hashCode
-    // DONE
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;

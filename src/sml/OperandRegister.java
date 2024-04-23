@@ -37,9 +37,7 @@ public class OperandRegister implements InstructionSource, InstructionDestinatio
     public String toString() {
         return registerName.toString();
     }
-
-    // TODO: Implement methods .equals and .hashCode
-    // DONE
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;

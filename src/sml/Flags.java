@@ -1,15 +1,8 @@
 package sml;
 
-// TODO: write a JavaDoc for the class and methods
-// DONE
 
 import java.util.Objects;
 
-/**
- * @author naji
- * Represents a set of flags used in a computer system.
- * The flags include zero flag (ZF) and sign flag (SF).
- */
 public class Flags {
     private boolean zero, sign;
 
@@ -48,8 +41,6 @@ public class Flags {
     public void setSF(boolean sign) {
         this.sign = sign;
     }
-    //TODO: implement methods .toString, .equals and .hashCode
-    // DONE
 
     /**
      * Returns a string representation of the Flags object.

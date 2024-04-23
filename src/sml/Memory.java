@@ -5,18 +5,6 @@ import java.util.BitSet;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-// TODO: write a JavaDoc for the class
-// DONE
-
-/**
- *
- * @author Naji
- *
- * Represents the memory of a machine, which consists of an array of integers.
- * The memory tracks used cells and provides methods to get and set values at specific addresses.
- * Used cells are tracked using a BitSet.
- *
- */
 public class Memory {
     private final int[] contents;
     private final BitSet usedCells = new BitSet();
@@ -64,8 +52,6 @@ public class Memory {
                 .collect(Collectors.joining("\n"));
     }
 
-    //TODO: implement methods .equals and .hashCode
-    // DONE
     /**
      *
      * @param obj to compare with
@@ -73,11 +59,6 @@ public class Memory {
      */
     @Override
     public boolean equals(Object obj) {
-        /**
-         * The usedCells BitSet is not considered in the equality check
-         * because it seems to be a tracking mechanism for accessed memory cells and might not be crucial
-         * for determining equality between two instances
-         */
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Memory memory = (Memory) obj;
