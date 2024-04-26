@@ -15,19 +15,20 @@ public final class Machine {
 
     private final Flags flags;
 
-    public void setProgramCounter(int programCounter) {
-        this.programCounter = programCounter;
-    }
-
     // The program counter; it contains the index (in program)
     // of the next instruction to be executed.
     private int programCounter = 0;
-
     public Machine(int memorySize) {
         this.registers = Registers.getInstance();
         this.flags = new Flags();
         this.memory = new Memory(memorySize);
     }
+
+    public void setProgramCounter(int programCounter) {
+        this.programCounter = programCounter;
+    }
+
+
 
     /**
      * Execute the program in program, beginning at instruction 0.

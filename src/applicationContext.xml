@@ -9,8 +9,8 @@
         <constructor-arg value="resources/test1.sml"/>
     </bean>
 
-<!--    <bean id="machine" class="sml.Machine">-->
-<!--        <constructor-arg value="0x40_000"/>-->
-<!--    </bean>-->
+    <bean id="machine" class="sml.Machine">
+        <constructor-arg value="262144"/>
+    </bean>
 
 </beans>

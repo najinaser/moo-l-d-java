@@ -9,25 +9,27 @@ public class RunSml {
 
     private Translator translator;
 
-    RunSml(Translator t) {
+    private Machine machine;
+
+    RunSml(Translator t, Machine m) {
         this.translator = t;
+        this.machine = m;
     }
 
     public void execute() {
 
         try {
-            Machine m = new Machine(0x40_000);
-            this.translator.readAndTranslate(m);
+            this.translator.readAndTranslate(this.machine);
 
-            System.out.println("Here is the program; it has " + m.getProgram().size() + " instructions.");
-            System.out.println(m);
+            System.out.println("Here is the program; it has " + this.machine.getProgram().size() + " instructions.");
+            System.out.println(this.machine);
 
             System.out.println("Beginning program execution.");
-            m.execute();
+            this.machine.execute();
             System.out.println("Ending program execution.");
 
-            System.out.println("Values of registers at program termination: " + m.getRegisters() + ".");
-            System.out.println("Contents of memory after program termination:\n" + m.getMemory());
+            System.out.println("Values of registers at program termination: " + this.machine.getRegisters() + ".");
+            System.out.println("Contents of memory after program termination:\n" + this.machine.getMemory());
         }
         catch (IOException e) {
             System.out.println("Error reading the program");

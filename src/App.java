@@ -8,7 +8,9 @@ public class App {
         ApplicationContext context = new ClassPathXmlApplicationContext("./applicationContext.xml");
         Translator translator = context.getBean("translator", Translator.class);
 
-        RunSml runSml = new RunSml(translator);
+        Machine machine = context.getBean("machine", Machine.class);
+
+        RunSml runSml = new RunSml(translator, machine);
         runSml.execute();
     }
 }
